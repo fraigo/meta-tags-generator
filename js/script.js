@@ -7,7 +7,9 @@ function urlParameters(){
     var search = location.search.substring(1);
     return JSON.parse(
         '{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', 
-        function(key, value) { return key===""?value:decodeURIComponent(value) }
+        function(key, value) { 
+            console.log([key,value]);
+            return key===""?value:decodeURIComponent(value).replace(/\+/g,' ') }
         )
 }
 
@@ -78,17 +80,24 @@ function generate(){
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="%url%"/>
 <link rel="canonical" href="%url%" />
-
+`;
+if (params["image"]!=""){
+    template+=`
 <!-- Facebook OpenGraph  Social media image link url and size (must be http, not https) -->
 <meta property="og:image" content="%image%"/>
 <meta property="og:image:width" content="%image_width%"/>
 <meta property="og:image:height" content="%image_height%"/>
-
+    `;
+}
+if (params["icon"]!=""){
+    template+=`
 <!-- Fav Icon / App Icon -->
 <link rel="shortcut icon" href="%icon%"/>
 <link rel="icon" type="image/png" href="%icon%" sizes="%image_width%x%image_height%"/>
-<link rel="apple-touch-icon" sizes="%icon%" href="images/icon.png"/>`;
-    
+<link rel="apple-touch-icon" sizes="%icon%" href="images/icon.png"/>
+`;
+
+}
     for(var key in params){
         var reg=new RegExp("%"+key+"%","g");
         template=template.replace(reg,params[key]);
@@ -108,6 +117,6 @@ function submit(){
 }
 
 var params=urlParameters();
-
+console.log(params);
 prefill(params);
 generate();
