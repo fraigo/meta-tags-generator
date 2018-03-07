@@ -5,12 +5,17 @@ console.log("Loaded script.js");
 //Based on https://stackoverflow.com/questions/8648892/convert-url-parameters-to-a-javascript-object
 function urlParameters(){
     var search = location.search.substring(1);
-    return JSON.parse(
-        '{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', 
-        function(key, value) { 
-            console.log([key,value]);
-            return key===""?value:decodeURIComponent(value).replace(/\+/g,' ') }
+    var query= '{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}';
+    if (query.indexOf(":")!=-1){
+        return JSON.parse(
+            query, 
+            function(key, value) { 
+                console.log([key,value]);
+                return key===""?value:decodeURIComponent(value).replace(/\+/g,' ') 
+            }
         )
+    }
+    return {};
 }
 
 
@@ -20,6 +25,22 @@ function autofill(frm){
         frm.description.value=frm.title.value;
     }
 
+
+}
+
+function changeOgImage(input){
+    var frm=document.forms[0];
+    input.value=input.value.replace("https:","http:");
+    var img=document.createElement("img");
+    img.onload=function(ev){
+        console.log(img.width,img.height);
+        frm.image_width.value=img.width;
+        frm.image_height.value=img.height;
+    }
+    img.src=input.value;
+    frm.image_width.value="";
+    frm.image_height.value="";
+    
 }
 
 function readUrl(url){

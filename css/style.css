@@ -59,11 +59,12 @@ footer{
 	
 }
 
-footer .action{
-	position:sticky;
-	top:-1px;
+
+.action{
 	background-color: var(--color-main-dark);
-	height:45px;
+	height:55px;
+	position:sticky;
+	top:45px;
 }
 
 
@@ -87,16 +88,12 @@ pre{
 	overflow:auto;
 }
 
-form{
-	overflow:auto;
-	width:100%;
-}
 
 h1,h2,h3,h4{
 	margin: 6px 0px;
 }
 
-footer > pre{
+section > pre{
 	overflow:auto;
 	margin:8px;
 	background-color: var(--color-main-light);
@@ -107,4 +104,16 @@ footer > pre{
 
 .testcode{
 	float:right;
+}
+
+header > h1{
+	font-size:1.4em;
+}
+
+@media (max-width: 480px){
+
+	header > h1{
+		font-size:6vw;
+		height:1.2em;
+	}
 }
