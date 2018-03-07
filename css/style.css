@@ -13,6 +13,10 @@ body{
 	margin:0px;
 }
 
+a:link, a:visited, a:active{
+	color: var(--color-light);
+}
+
 /* Nav configuration */
 
 nav{
@@ -39,7 +43,7 @@ header{
 	background-color: var(--color-main-dark);
 	color:var(--color-main-light);
 	padding:10px;
-	height:50px;
+	height:45px;
 }
 
 section{
@@ -52,6 +56,14 @@ footer{
 	background-color: var(--color-main-dark);
 	color:var(--color-main-light);
 	font-size:0.7em;
+	
+}
+
+footer .action{
+	position:sticky;
+	top:-1px;
+	background-color: var(--color-main-dark);
+	height:45px;
 }
 
 
@@ -91,4 +103,8 @@ footer > pre{
 	color:var(--color-main-dark);
 	width:95%;
 	padding:5px;
+}
+
+.testcode{
+	float:right;
 }
