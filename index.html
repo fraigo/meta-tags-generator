@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Viewport configuration - Responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+	<!-- Character set of tis page -->
+	<meta charset="UTF-8">
+
+	<!-- Page title -->
+	<title>HTML Template page</title>
+	<meta name="keywords" content="HTML, Templates"/>
+	<meta name="description" content="HTML Basic Template to start a web page."/>
+	
+	<!-- Facebook OpenGraph  Social media attributes -->
+	<meta property="og:title" content="HTML Template page"/>
+	<meta property="og:description" content="HTML Basic Template to start a web page."/>
+	<meta property="og:site_name" content="Tower Builder Game"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="https://fraigo.github.io/tower-game/"/>
+
+	<!-- Facebook OpenGraph  Social media image link url and size (must be http, not https) -->
+	<meta property="og:image" content="http://fraigo.github.io/tower-game/images/icon.png"/>
+	<meta property="og:image:width" content="254"/>
+	<meta property="og:image:height" content="254"/>
+
+	<!-- Fav Icon / App Icon -->
+	<link rel="shortcut icon" href="images/icon.png"/>
+	<link rel="icon" type="image/png" href="images/icon.png" sizes="254x254"/>
+	<link rel="apple-touch-icon" sizes="254x254" href="images/icon.png"/>
+
+	<!-- Stylesheet associated (CSS code) -->
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+	<nav>
+		<ul>
+			<li>
+				Menu1
+				<ul>
+					<li>SubMenu1</li>
+					<li>SubMenu2</li>
+					<li>SubMenu3</li>
+				</ul>
+			</li>
+			<li>Menu2</li>
+			<li>Menu3</li>
+		</ul>
+
+	</nav>
+
+	<main>
+		<header>
+			<h1></h1>
+		</header>
+		<form>
+			<section>
+				<section>
+					<h3>Web site (url)</h3>
+					<input type="text" placeholder="https://my.site/path" name="url" onchange="readUrl(this.value)">
+				</section>
+				<section>
+					<h3>Title</h3>
+					<input type="text" placeholder="Page title" name="title" onchange="autofill(this.form)">
+				</section>
+				<section>
+					<h3>Description</h3>
+					<input type="text" placeholder="Page description" name="description" onchange="autofill(this.form)">
+				</section>
+				<section>
+					<h3>Keywords</h3>
+					<input type="text" placeholder="Keyword1, Next keyword2, Keyword3" name="keywords">
+				</section>
+				
+				<section>
+					<h3>Web site image</h3>
+					<input type="url" placeholder="http://my.site/path/to/image.png" name="image">
+					<section>
+						<h4>Image width (pixels)</h4>
+						<input type="url" placeholder="256" name="image_width">
+						<h4>Image height (pixels)</h4>
+						<input type="url" placeholder="256" name="image_width">
+					</section>
+				</section>
+			</section>
+		</form>
+		
+		
+		<footer>
+			<section>
+				<button onclick="submit()">Generate</button>
+			</section>
+			<pre id="code">
+
+			</pre>
+		</footer>
+	
+	</main>
+	<script src="js/script.js" type="text/javascript" ></script>
+	
+
+</body>
+</html>

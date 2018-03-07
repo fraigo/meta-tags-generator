@@ -1,0 +1,110 @@
+* {
+	--separation:0px;
+	--color-light: #FFF;
+	--color-dark: #000;
+	--color-main-dark: #44A;
+	--color-main-light: #CCE;
+}
+
+
+body{
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin:0px;
+}
+
+/* Nav configuration */
+
+nav{
+	position:absolute;
+	width: var(--separation);
+	background-color: var(--color-main-light);
+	color:var(--color-dark);
+	height:100vh;
+	overflow-x: hidden;
+}
+
+nav  ul{
+	padding-left: 20px;
+}
+
+nav > ul  li{
+	display:inline-block;
+	width:100%;
+	margin-left: 0px;
+	font-size:0.9em;
+}
+
+/* content configuration */
+
+main{
+	position:relative;
+	margin-left:var(--separation);
+
+}
+
+header{
+	position:sticky;
+	top:0px;
+	height:4em;
+	overflow:hidden;
+	background-color: var(--color-main-dark);
+	color:var(--color-main-light);
+	padding:10px;
+	height:10vh;
+}
+
+section{
+	padding: 10px;
+	font-size:0.95em;
+}
+
+
+footer{
+	position:relative;
+	padding:10px;
+	background-color: var(--color-main-dark);
+	color:var(--color-main-light);
+	width: 100%;
+	font-size:0.7em;
+}
+
+
+/* inputs */
+
+input{
+	padding:6px;
+	border-radius:5px;
+	width:95%;
+}
+
+button{
+	background-color: var(--color-main-light);
+	padding:6px;
+	font-size:1.2em;
+	border-radius:5px;
+	width:95%;
+}
+
+pre{
+	overflow:auto;
+}
+
+form{
+	height:50vh;
+	overflow:auto;
+	width:100%;
+}
+
+h1,h2,h3,h4{
+	margin: 6px 0px;
+}
+
+footer > pre{
+	overflow:auto;
+	margin:8px;
+	background-color: var(--color-main-light);
+	color:var(--color-main-dark);
+	width:95%;
+	padding:5px;
+}
