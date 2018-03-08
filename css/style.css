@@ -102,8 +102,13 @@ section > pre{
 	padding:5px;
 }
 
+section.hints > div{
+	display:inline-block;
+	text-align: center;
+	width:100%;
+}
 .testcode{
-	float:right;
+	height:32px;
 }
 
 header > h1{
