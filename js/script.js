@@ -54,8 +54,11 @@ function readUrl(url){
         var title1=(doc.querySelector("title"));
         var desc1=(doc.querySelector("meta[name='description']"));
         var keyw1=(doc.querySelector("meta[name='keywords']"));
+        var ogImg=(doc.querySelector("meta[name='og:image']"));
+        var icon1=(doc.querySelector("link[rel='shortcut-icon']"));
         console.log("TITLE",title1.textContent);
         console.log("DESC",desc1.getAttribute("content"));
+        console.log("IMAGE",ogImg,icon1);
         if (title1 && frm.title.value==""){
             frm.title.value=title1.textContent;
         }
@@ -65,11 +68,14 @@ function readUrl(url){
         if (keyw1 && frm.keywords.value==""){
             frm.keywords.value=keyw1.getAttribute("content");
         }
+        if (ogImg && frm.image.value==""){
+            frm.image.value=ogImg.getAttribute("content");
+        }
         autofill();
         
         
     },function(){
-        
+        console.log("Error");
     })
 }
 
