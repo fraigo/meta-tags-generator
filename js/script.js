@@ -54,12 +54,12 @@ function readUrl(url){
         var title1=(doc.querySelector("title"));
         var desc1=(doc.querySelector("meta[name='description']"));
         var keyw1=(doc.querySelector("meta[name='keywords']"));
-        console.log("TITLE",title1.textContent);
-        console.log("DESC",desc1.getAttribute("content"));
         if (title1 && frm.title.value==""){
+            console.log("TITLE",title1.textContent);
             frm.title.value=title1.textContent;
         }
         if (desc1 && frm.description.value==""){
+            console.log("DESC",desc1.getAttribute("content"));
             frm.description.value=desc1.getAttribute("content");
         }
         if (keyw1 && frm.keywords.value==""){
