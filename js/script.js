@@ -56,13 +56,12 @@ function readUrl(url){
         var keyw1=(doc.querySelector("meta[name='keywords']"));
         var ogImg=(doc.querySelector("meta[name='og:image']"));
         var icon1=(doc.querySelector("link[rel='shortcut-icon']"));
-        console.log("TITLE",title1.textContent);
-        console.log("DESC",desc1.getAttribute("content"));
-        console.log("IMAGE",ogImg,icon1);
         if (title1 && frm.title.value==""){
+            console.log("TITLE",title1.textContent);
             frm.title.value=title1.textContent;
         }
         if (desc1 && frm.description.value==""){
+            console.log("DESC",desc1.getAttribute("content"));
             frm.description.value=desc1.getAttribute("content");
         }
         if (keyw1 && frm.keywords.value==""){
@@ -70,6 +69,9 @@ function readUrl(url){
         }
         if (ogImg && frm.image.value==""){
             frm.image.value=ogImg.getAttribute("content");
+        }
+        if (icon1 && frm.icon.value==""){
+            frm.icon.value=icon1.getAttribute("href");
         }
         autofill();
         
