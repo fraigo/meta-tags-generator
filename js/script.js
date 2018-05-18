@@ -1,6 +1,4 @@
 
-console.log("Loaded script.js");
-
 
 //Based on https://stackoverflow.com/questions/8648892/convert-url-parameters-to-a-javascript-object
 function urlParameters(){
@@ -123,7 +121,7 @@ if (params["icon"]!=""){
 <!-- Fav Icon / App Icon -->
 <link rel="shortcut icon" href="%icon%"/>
 <link rel="icon" type="image/png" href="%icon%" sizes="%image_width%x%image_height%"/>
-<link rel="apple-touch-icon" sizes="%icon%" href="images/icon.png"/>
+<link rel="apple-touch-icon" sizes="%image_width%x%image_height%" href="%icon%"/>
 `;
 
 }
