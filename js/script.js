@@ -95,33 +95,33 @@ function request(url,callback,error){
 
 function generate(){
     
-    var template=`<!-- Page title -->
+    var template=`
 <title>%title%</title>
 <meta name="keywords" content="%keywords%"/>
 <meta name="description" content="%description%"/>
 
-<!-- Facebook OpenGraph  Social media attributes -->
 <meta property="og:title" content="%title%"/>
 <meta property="og:description" content="%description%"/>
 <meta property="og:site_name" content="%title%"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="%url%"/>
+
 <link rel="canonical" href="%url%" />
+
 `;
 if (params["image"]!=""){
     template+=`
-<!-- Facebook OpenGraph  Social media image link url and size (must be http, not https) -->
 <meta property="og:image" content="%image%"/>
 <meta property="og:image:width" content="%image_width%"/>
 <meta property="og:image:height" content="%image_height%"/>
+
     `;
 }
 if (params["icon"]!=""){
-    template+=`
-<!-- Fav Icon / App Icon -->
-<link rel="shortcut icon" href="%icon%"/>
+    template+=`<link rel="shortcut icon" href="%icon%"/>
 <link rel="icon" type="image/png" href="%icon%" sizes="%image_width%x%image_height%"/>
 <link rel="apple-touch-icon" sizes="%image_width%x%image_height%" href="%icon%"/>
+
 `;
 
 }
